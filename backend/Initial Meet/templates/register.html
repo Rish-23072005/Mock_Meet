@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='initial-meet-logo.png') }}" type="main-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial Meet | Register</title>
+</head>
+<body>
+
+   
+    <section class="form-container">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='initial-meet-logo.png') }}" alt="">
+        </div>
+        <form action="{{ url_for('register') }}" method="POST">
+            <!-- Secret Key -->
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+             <!-- Flash Messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert alert-danger">
+                        {{ messages | join('<br>') | safe }}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <h3>User Register</h3>
+            <div class="form-container">
+                {{ form.email.label }} {{ form.email(class="box", id="email") }}
+                {{ form.username.label }} {{ form.username(class="box", id="username") }}
+                {{ form.password.label }} {{ form.password(class="box", id="password") }}
+                
+            </div>
+            <button class="btn" type="submit">Register</button>
+            <p>already have an account? <a href="{{ url_for('login') }}">login now</a></p>
+        </form>
+    </section>
+
+
+</body>
+</html>

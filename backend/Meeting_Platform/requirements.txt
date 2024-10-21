@@ -1,0 +1,8 @@
+Flask
+Flask-SocketIO
+python-socketio
+eventlet
+Jinja2
+itsdangerous
+Werkzeug
+greenlet

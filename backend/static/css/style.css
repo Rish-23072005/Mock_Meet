@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #000000, #FFD700);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 350px;
+}
+
+.logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px;
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff2c3a;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.social-login {
+    margin-top: 20px;
+}
+
+.social-login a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #555;
+}
+
+.social-login a:hover {
+    color: #000;
+}

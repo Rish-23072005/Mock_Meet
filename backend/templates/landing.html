@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="We are building an interface that helps users with a situation by the use of an AI that asks questions on the basis of a code which the aspirant has written, asked from a diverse pack of frequently encountered questions."
+    />
+    <title>AI Interview</title>
+  </head>
+  <body>
+    
+    {% if session %}
+    <div><pre>{{pretty}}</pre></div>
+    {% else %}
+    <p><a href={{url_for('googleLogin')}}>Login with Google</a></p>
+    {% endif %}
+  </body>
+</html>

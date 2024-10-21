@@ -1,0 +1,144 @@
+:root{
+
+    --border: .2rem solid white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgba(27,38,42,255);
+}
+
+.image-container {
+    display: flex;
+    margin-left: 460px;
+    margin-bottom: -30px;
+}
+
+.display {
+    background-image: linear-gradient(to bottom, #f56391, #b24b6c, #733448, #3a1e27, #000000);
+}
+
+.form-container form {
+    border: var(--border);
+    border-radius: 13px;
+    background-image: linear-gradient(to bottom, #f56391, #b24b6c, #733448, #3a1e27, #000000);
+    margin: 20px auto;
+    max-width: 30rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.form-container form h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.form-container form .box{
+    margin:1rem 0;
+    padding:10px;
+    color:black;
+    border:var(--border);
+    font-size: 15px;
+    width: 100%;
+ }
+
+ .form-container form p{
+    margin-top: 1.5rem;
+    font-size: 15px;
+    color: white;
+ }
+ 
+ .form-container form p a{
+    font-size: 15px;
+    color:#d8cf4e;
+ }
+ 
+ .form-container form p a:hover{
+    text-decoration: underline;
+ }
+
+ .form-group option {
+    color: black;
+ }
+
+ 
+.btn {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: .2s linear;
+    padding: 10px 20px;
+
+}
+
+.btn:hover{
+    color: rgba(247, 242, 178, 0.945);
+}
+
+.btn-primary {
+    font-size: 15px;
+}
+
+.btn-outline-light:hover{
+    color: black;
+}
+
+.back-to-dashboard {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 500px;
+    margin-bottom: 5px;
+}
+
+.back-to-dashboard2 {
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 495px;
+    margin-bottom: 5px;
+}
+
+.back-to-dashboard button {
+    padding: 20px 50px;
+    background-color: black;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.back-to-dashboard2 button {
+    padding: 20px 50px;
+    background-color: black;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.back-to-dashboard button:hover{
+    color: rgba(247, 242, 178, 0.945);
+}
+
+.back-to-dashboard2 button:hover{
+    color: rgba(247, 242, 178, 0.945);
+}

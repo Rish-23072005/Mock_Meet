@@ -1,0 +1,97 @@
+<html>
+<head>
+    <style>
+        #root {
+            width: 100vw;
+            height: 100vh;
+        }
+        .button-container {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; /* Ensure buttons are on top */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+</body>
+    
+<script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+<script>
+        window.onload = function () {
+            function getUrlParams(url) {
+                let urlStr = url.split('?')[1];
+                const urlSearchParams = new URLSearchParams(urlStr);
+                const result = Object.fromEntries(urlSearchParams.entries());
+                return result;
+            }
+
+            // Generate a Token by calling a method.
+            const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
+            const userID = Math.floor(Math.random() * 10000) + "";
+            const userName = "userName" + userID;
+            const appID = 199488940;
+            const serverSecret = "c1501ed11a0cc8ef5f3e7e8b3260d12f";
+            const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
+
+            const zp = ZegoUIKitPrebuilt.create(kitToken);
+            zp.joinRoom({
+                container: document.querySelector("#root"),
+                sharedLinks: [{
+                    name: 'Personal link',
+                    url: window.location.protocol + '//' + window.location.host + window.location.pathname + '?roomID=' + roomID,
+                }],
+                scenario: {
+                    mode: ZegoUIKitPrebuilt.VideoConference,
+                },
+                turnOnMicrophoneWhenJoining: false,
+                turnOnCameraWhenJoining: false,
+                showMyCameraToggleButton: true,
+                showMyMicrophoneToggleButton: true,
+                showAudioVideoSettingsButton: true,
+                showScreenSharingButton: true,
+                showTextChat: true,
+                showUserList: true,
+                maxUsers: 50,
+                layout: "Auto",
+                showLayoutButton: true,
+            });
+
+            startAudioRecording(roomID, userID, userName);
+        }
+
+        // Function to send audio recording start request to the Flask backend
+function startAudioRecording(roomID, userID, userName) {
+    const data = {
+        roomID: roomID,
+        userID: userID,
+        userName: userName,
+    };
+
+    fetch('/audio_recording', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Audio recording started:', data);
+    })
+    .catch(error => {
+        console.error('Error starting audio recording:', error);
+    });
+}
+    </script>
+
+</html>

@@ -1,0 +1,49 @@
+/* General navbar styles */
+.navbar {
+    background-color: #e5e8eb;
+    height: 70px;
+}
+
+.navbar .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.navbar .navbar-brand img {
+    height: 40px;
+}
+
+/* Links container */
+.navbar .links-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Individual link styles */
+.navbar .link-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar .link-item .icon {
+    font-size: 1.5rem;
+}
+
+.navbar .link-item .text-container {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+/* Hover effects */
+.navbar .link-item:hover {
+    background-color: #d3d3d3;
+}
